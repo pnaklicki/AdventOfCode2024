@@ -8,11 +8,13 @@ namespace AdventOfCode2024
 {
     public abstract class PuzzleBase
     {
+        public abstract int DayNumber { get; }
+
         public abstract (string, string) Solve();
 
-        protected string LoadInputData(string inputFileName)
+        protected string LoadInputData()
         {
-            return File.ReadAllText($"./InputFiles/{inputFileName}.txt");
+            return File.ReadAllText($"./InputFiles/Day{DayNumber}.txt");
         }
     }
 }

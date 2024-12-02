@@ -2,6 +2,8 @@
 {
     public class HistorianHysteria : PuzzleBase
     {
+        public override int DayNumber => 1;
+
         public override (string, string) Solve()
         {
             var inputData = GetInputData();
@@ -41,7 +43,7 @@
 
         private (List<int>, List<int>) GetInputData()
         {
-            var inputString = LoadInputData("Day1");
+            var inputString = LoadInputData();
 
             var firstList = new List<int>();
             var secondList = new List<int>();

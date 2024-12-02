@@ -16,7 +16,7 @@ do
     Console.WriteLine("Available solutions are:");
     foreach (var puzzle in puzzleList)
     {
-        Console.WriteLine($"{puzzleList.IndexOf(puzzle) + 1}: {puzzle.GetType().Name}");
+        Console.WriteLine($"{puzzle.DayNumber}: {puzzle.GetType().Name}");
     }
     Console.WriteLine();
 

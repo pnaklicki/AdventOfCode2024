@@ -2,6 +2,8 @@
 {
     public class RedNosedReports : PuzzleBase
     {
+        public override int DayNumber => 2;
+
         public override (string, string) Solve()
         {
             var reportList = GetInputData();
@@ -88,7 +90,7 @@
 
         private List<List<int>> GetInputData()
         {
-            var inputString = LoadInputData("Day2");
+            var inputString = LoadInputData();
 
             var reportList = new List<List<int>>();
 
