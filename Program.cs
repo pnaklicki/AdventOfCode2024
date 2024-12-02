@@ -4,7 +4,8 @@ using System.Reflection;
 
 var puzzleList = new List<PuzzleBase>
 {
-    new HistorianHysteria()
+    new HistorianHysteria(),
+    new RedNosedReports()
 };
 
 do
