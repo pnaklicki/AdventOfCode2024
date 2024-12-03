@@ -1,12 +1,18 @@
 ﻿using AdventOfCode2024;
 using AdventOfCode2024.Day1;
+using AdventOfCode2024.Day3;
 using System.Reflection;
 
-var puzzleList = new List<PuzzleBase>
+var puzzleList = new List<PuzzleBase>();
+var puzzleTypes = Assembly.GetExecutingAssembly().GetTypes()
+    .Where(t => !t.IsAbstract && typeof(PuzzleBase).IsAssignableFrom(t)).ToList();
+foreach (var puzzleType in puzzleTypes)
 {
-    new HistorianHysteria(),
-    new RedNosedReports()
-};
+    var puzzle = Activator.CreateInstance(puzzleType) as PuzzleBase;
+    if (puzzle != null)
+        puzzleList.Add(puzzle);
+}
+puzzleList = puzzleList.OrderBy(p => p.DayNumber).ToList();
 
 do
 {
