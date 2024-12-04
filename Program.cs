@@ -1,6 +1,4 @@
 ﻿using AdventOfCode2024;
-using AdventOfCode2024.Day1;
-using AdventOfCode2024.Day3;
 using System.Reflection;
 
 var puzzleList = new List<PuzzleBase>();
@@ -22,7 +20,7 @@ do
     Console.WriteLine("Available solutions are:");
     foreach (var puzzle in puzzleList)
     {
-        Console.WriteLine($"{puzzle.DayNumber}: {puzzle.GetType().Name}");
+        Console.WriteLine($"Day {puzzle.DayNumber}: {puzzle.GetType().Name}");
     }
     Console.WriteLine();
 
