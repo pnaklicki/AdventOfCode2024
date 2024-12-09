@@ -1,4 +1,5 @@
 ﻿using AdventOfCode2024;
+using System.Diagnostics;
 using System.Reflection;
 
 var puzzleList = new List<PuzzleBase>();
@@ -41,12 +42,24 @@ do
         }
     } while (!isCorrectInput);
 
+    Console.WriteLine();
+    Console.WriteLine("Computing solutions, please wait...");
+    Console.WriteLine();
+    Console.WriteLine();
+
+    var stopwatch = new Stopwatch();
+    stopwatch.Start();
+
     var selectedPuzzle = puzzleList[result - 1];
     var solution = selectedPuzzle.Solve();
+
+    stopwatch.Stop();
 
     Console.WriteLine($"Solution for AOC 2024 Day{result} puzzles are:");
     Console.WriteLine($"Puzzle 1: {solution.Item1}");
     Console.WriteLine($"Puzzle 2: {solution.Item2}");
+    Console.WriteLine();
+    Console.WriteLine($"Solutions were computed in {stopwatch.Elapsed}");
     Console.ReadLine();
     Console.Clear();
 } while (true);
