@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode2024.Day9
+﻿namespace AdventOfCode2024.Day10
 {
     enum Direction
     {
