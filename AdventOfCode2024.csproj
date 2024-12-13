@@ -12,6 +12,7 @@
     <None Remove="InputFiles\day10.txt" />
     <None Remove="InputFiles\Day11.txt" />
     <None Remove="InputFiles\Day12.txt" />
+    <None Remove="InputFiles\Day13.txt" />
     <None Remove="InputFiles\Day2.txt" />
     <None Remove="InputFiles\Day3.txt" />
     <None Remove="InputFiles\Day4.txt" />
@@ -23,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="InputFiles\Day13.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="InputFiles\Day12.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
