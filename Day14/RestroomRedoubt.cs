@@ -76,11 +76,11 @@ namespace AdventOfCode2024.Day14
         {
             var tileWidth = 101;
             var tileHeight = 103;
-            var seconds = 10000;
+            var secondsElapsed = 0;
+            var easterEggFound = false;
             var robotFinalPositions = new int[tileHeight, tileWidth];
-            var easterEggSecond = 0;
 
-            for (var i = 0; i < seconds; i++)
+            while (!easterEggFound)
             {
                 foreach (var robot in robots)
                 {
@@ -115,14 +115,12 @@ namespace AdventOfCode2024.Day14
 
                     robotFinalPositions[robot.InitialPosition.Item1, robot.InitialPosition.Item2]++;
                 }
-
-                if(AnalyzeRobotsPositionAndPrintProbableEasterEgg(robotFinalPositions, i + 1))
-                {
-                    easterEggSecond = i + 1;
-                }
+                secondsElapsed++;
+                if (AnalyzeRobotsPositionAndPrintProbableEasterEgg(robotFinalPositions, secondsElapsed))
+                    easterEggFound = true;
             }
 
-            return easterEggSecond.ToString();
+            return secondsElapsed.ToString();
         }
 
         private bool AnalyzeRobotsPositionAndPrintProbableEasterEgg(int[,] robotsPositions, int second)
